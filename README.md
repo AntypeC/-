@@ -53,7 +53,7 @@ And use the Regex tool to delete all replicating chapter title by entering ```^\
 4. Lastly, install and use the Modify ePub plugin, under HTML & Styles, check the options for "Encode HTML in UTF-8", "Remove embedded fonts", "Modify @page and body margin styles" and "Smarten punctuation" and hit apply. Then install and use the plugin "Convert Chinese Text Simplified/Traditional" and apply it for text-type and punctuation (there's also option for converting Horizontal Text to Vertical Text), select the following:
 Simplified to Traditional, Output: Taiwan, Update quotes, Entire eBook
 
-If Send to Kindle fails for the epub file, use Amazon Kindle EPUB Fix: https://kindle-epub-fix.netlify.app/
+If Send to Kindle fails to work for the epub file, use Amazon Kindle EPUB Fix: https://kindle-epub-fix.netlify.app/
 
 # 製作與轉換適合Kindle中文直書直排之Mobi格式電子書
 
