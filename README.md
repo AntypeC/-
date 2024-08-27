@@ -2,7 +2,7 @@
 
 1. Find the index of the book, e.g. ```91818``` from the URL http://www.kdxx.net/txt/91818.html and run ```Download_epub.py``` with the ```book_index``` set to it.
 
-2. Use the edit tool in Calibre modify the book thumbnail ```cover.png```, modify the chapter title wrapped in ```<h2></h2>``` and remove the scrapped artifact of the site using Find & Replace all, e.g. :
+2. Use the edit tool in Calibre to replace the book thumbnail ```cover.png```, modify the chapter title wrapped in ```<h2></h2>``` and remove the scrapped artifact of the site using Find & Replace all, e.g. :
 ```calibre, version 7.16.0
 Searching done: <p>Performed the replacement at 872 occurrences of       &lt;a href="http://www.kdxx.net"&gt;首页&lt;/a&gt; &gt;
       &lt;a href="/class/kehuanchiyuan/1/"&gt;科幻次元&lt;/a&gt; &gt;
@@ -10,8 +10,7 @@ Searching done: <p>Performed the replacement at 872 occurrences of       &lt;a h
 ```calibre, version 7.16.0
 Searching done: <p>Performed the replacement at 872 occurrences of &lt;div&gt;&lt;a href="javascript:report()"&gt;章节报错(免登录)&lt;/a&gt;
 ```
-
- To create a Table of Content, delete the default ```toc.xhtml```, go to Tools > Table of Contents > Edit Table of Contents, Ctrl+A to select all and hit the recycle button to Remove all selected entries. Then, click on "Generate ToC from major headings" and hit OK. Now, to create an appendix, go back to Tools > Table of Contents, select "Insert inline Table of Contents" and place the new ```toc.xhtml``` into the original position of the default.
+And use the Regex tool to delete all replicating chapter title by entering ```^\s*第\d+章\s+[^\n]*\n``` in the search field. To create a Table of Content, delete the default ```toc.xhtml```, go to Tools > Table of Contents > Edit Table of Contents, Ctrl+A to select all and hit the recycle button to Remove all selected entries. Then, click on "Generate ToC from major headings" and hit OK. Now, to create an appendix, go back to Tools > Table of Contents, select "Insert inline Table of Contents" and place the new ```toc.xhtml``` into the original position of the default.
 
  3. Next, to make sure the GuanKiapTsingKhai.ttf font applies properly to the text without being too crammed, use the following stylesheet for the text, body and title of the book:
 
@@ -51,8 +50,10 @@ Searching done: <p>Performed the replacement at 872 occurrences of &lt;div&gt;&l
 }
 ```
 
-4. Lastly, install and use the Modify ePub plugin, under HTML & Styles, check the options for "Remove embedded fonts", "Modify @page and body margin styles" and "Smarten punctuation" and hit apply. Then install and use the plugin "Convert Chinese Text Simplified/Traditional" and apply it for text-type and punctuation (there's also option for converting Horizontal Text to Vertical Text), select the following:
+4. Lastly, install and use the Modify ePub plugin, under HTML & Styles, check the options for "Encode HTML in UTF-8", "Remove embedded fonts", "Modify @page and body margin styles" and "Smarten punctuation" and hit apply. Then install and use the plugin "Convert Chinese Text Simplified/Traditional" and apply it for text-type and punctuation (there's also option for converting Horizontal Text to Vertical Text), select the following:
 Simplified to Traditional, Output: Taiwan, Update quotes, Entire eBook
+
+If Send to Kindle fails for the epub file, use Amazon Kindle EPUB Fix: https://kindle-epub-fix.netlify.app/
 
 # 製作與轉換適合Kindle中文直書直排之Mobi格式電子書
 
